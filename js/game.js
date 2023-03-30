@@ -11,6 +11,8 @@ var gGame;
 var gIsFirstClick;
 var gMinePositions;
 
+//rendering and dom
+
 function renderBoard() {
   var strHTML = '<table border="0"><tbody>';
   for (var i = 0; i < gBoard.length; i++) {
@@ -31,14 +33,6 @@ function renderBoard() {
 function renderCell(i, j, value) {
   const elCell = document.querySelector(`.cell-${i}-${j}`);
   elCell.innerText = value;
-}
-
-function setMinesNegsCount(board) {
-  for (var i = 0; i < board.length; i++) {
-    for (var j = 0; j < board[i].length; j++) {
-      gBoard[i][j].minesAroundCount = getMineNegsCount(i, j, board);
-    }
-  }
 }
 
 function getMineNegsCount(rowIdx, colIdx, board) {
@@ -63,29 +57,7 @@ function handleMineClick(i, j) {
   gGame.shownCount++;
   gBoard[i][j].isShown = true;
 }
-function checkGameOver() {
-  // Game ends when all mines are marked,
-  //  and all the other cells are shown
 
-  if (gGame.livesLeft === 0) {
-    console.log('you lose');
-    clearInterval(gStopperIntervalId);
-    setSmiley('sad');
-    exposeAllMines();
-    gGame.isOn = false;
-    return;
-  }
-
-  const numOfCells = gLevel.SIZE ** 2;
-  const isGameWon = gGame.markedCount + gGame.shownCount === numOfCells;
-  if (isGameWon) {
-    console.log('you win');
-    clearInterval(gStopperIntervalId);
-    setSmiley('happy');
-    gGame.isOn = false;
-    return;
-  }
-}
 function exposeAllMines() {
   for (var i = 0; i < gMinePositions.length; i++) {
     const mineRowIndex = gMinePositions[i].i;
@@ -160,6 +132,7 @@ function startTimer() {
 }
 
 //events
+
 function onInit() {
   gGame = {
     isOn: true, //boolean - true playing is allowed, false not allowed
@@ -274,5 +247,37 @@ function deployMines(idxI, idxJ) {
     gMinePositions.push(validCells[randIdx]);
     validCells.splice(randIdx, 1);
     gBoard[mineCoordinates.i][mineCoordinates.j].isMine = true;
+  }
+}
+
+function setMinesNegsCount(board) {
+  for (var i = 0; i < board.length; i++) {
+    for (var j = 0; j < board[i].length; j++) {
+      gBoard[i][j].minesAroundCount = getMineNegsCount(i, j, board);
+    }
+  }
+}
+
+function checkGameOver() {
+  // Game ends when all mines are marked,
+  //  and all the other cells are shown
+
+  if (gGame.livesLeft === 0) {
+    console.log('you lose');
+    clearInterval(gStopperIntervalId);
+    setSmiley('sad');
+    exposeAllMines();
+    gGame.isOn = false;
+    return;
+  }
+
+  const numOfCells = gLevel.SIZE ** 2;
+  const isGameWon = gGame.markedCount + gGame.shownCount === numOfCells;
+  if (isGameWon) {
+    console.log('you win');
+    clearInterval(gStopperIntervalId);
+    setSmiley('happy');
+    gGame.isOn = false;
+    return;
   }
 }
