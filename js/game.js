@@ -125,7 +125,7 @@ function onCellClicked(elCell, i, j) {
   }
   const currCell = gBoard[i][j];
   if (currCell.isMine) {
-    handleMineClick();
+    handleMineClick(i, j);
   } else if (currCell.minesAroundCount === 0) {
     //this cell has no mine as neighbors
     elCell.classList.add('revealed'); //no-mines-around
@@ -142,10 +142,12 @@ function onCellClicked(elCell, i, j) {
   }
   checkGameOver();
 }
-function handleMineClick() {
+function handleMineClick(i, j) {
   console.log('boom');
+  renderCell(i, j, MINE);
   gGame.livesLeft--;
   setLivesLeft(gGame.livesLeft);
+
   checkGameOver();
 }
 function checkGameOver() {
@@ -160,7 +162,7 @@ function checkGameOver() {
     return;
   }
   if (gGame.livesLeft === 0) {
-    console.log('you win');
+    console.log('you lose');
     setSmiley('sad');
     exposeAllMines();
     gGame.isOn = false;
@@ -171,7 +173,7 @@ function exposeAllMines() {
   for (var i = 0; i < gMinePositions.length; i++) {
     const mineRowIndex = gMinePositions[i].i;
     const mineColIndex = gMinePositions[i].j;
-    renderCell(mineColIndex, mineColIndex, MINE);
+    renderCell(mineRowIndex, mineColIndex, MINE);
   }
 }
 
@@ -197,9 +199,6 @@ function onCellMarked(elCell, i, j) {
 }
 
 function expandShown(elCell, rowIdx, colIdx) {
-  // When user clicks a cell with no mines around, we need to open not only that cell, but also its neighbors.
-
-  // NOTE: start with a basic implementation that only opens the non-mine 1 st degree neighbors
   for (var i = rowIdx - 1; i <= rowIdx + 1; i++) {
     if (i < 0 || i >= gBoard.length) continue;
     for (var j = colIdx - 1; j <= colIdx + 1; j++) {
@@ -216,7 +215,7 @@ function expandShown(elCell, rowIdx, colIdx) {
         elCurrCell.classList.add('revealed'); //no-mines-around'
         currCell.isShown = true;
         gGame.shownCount++;
-        renderCell(i, j, '0');
+        //renderCell(i, j, '0');
       } else {
         currCell.isShown = true;
         elCurrCell.classList.add('revealed');
