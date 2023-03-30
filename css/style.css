@@ -4,78 +4,26 @@
 .cell {
   width: 20px;
 
-  height: 100px;
+  height: 20px;
 
   background-color: antiquewhite;
 
   text-align: center;
-  min-width: 100px;
-  min-height: 100px;
-  border: 1px solid black;
-  cursor: pointer;
-  font-size: 50px;
-}
-
-h1 {
-  font-weight: 400;
 }
 
 .revealed {
   background-color: aquamarine;
 }
-
-.board-container {
-  min-height: calc(100vh - 70px);
-}
-
 .footer {
-  height: 100px;
-  background-color: rgb(182, 253, 255);
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  padding: 1rem;
+  background-color: #efefef;
+  text-align: center;
 }
 
-.btn {
-  border-radius: 5px;
-  padding: 15px 25px;
-  font-size: 22px;
-  text-decoration: none;
-  margin: 20px;
-  color: #fff;
-  position: relative;
-  display: inline-block;
-  cursor: pointer;
-}
-
-.btn:active {
-  transform: translate(0px, 5px);
-  -webkit-transform: translate(0px, 5px);
-  box-shadow: 0px 1px 0px 0px;
-}
-
-.blue {
-  background-color: #55acee;
-  box-shadow: 0px 5px 0px 0px #3c93d5;
-}
-.smiley-container {
-  cursor: pointer;
-}
-
-.blue:hover {
-  background-color: #6fc6ff;
-}
-.green {
-  background-color: #2ecc71;
-  box-shadow: 0px 5px 0px 0px #15b358;
-}
-
-.green:hover {
-  background-color: #48e68b;
-}
-
-.red {
-  background-color: #e74c3c;
-  box-shadow: 0px 5px 0px 0px #ce3323;
-}
-
-.red:hover {
-  background-color: #ff6656;
+no-mines-around {
+  color: red;
 }

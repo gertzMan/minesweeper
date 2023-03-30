@@ -11,10 +11,6 @@ function createMat(ROWS, COLS) {
   }
   return mat;
 }
-function preventRightClick() {
-  const elBoardContainer = document.querySelector('.board-container');
-  elBoardContainer.addEventListener('contextmenu', (e) => e.preventDefault());
-}
 
 function getRandomInt(min, max) {
   min = Math.ceil(min);
