@@ -42,6 +42,7 @@ h1 {
   color: #fff;
   position: relative;
   display: inline-block;
+  cursor: pointer;
 }
 
 .btn:active {
@@ -53,6 +54,9 @@ h1 {
 .blue {
   background-color: #55acee;
   box-shadow: 0px 5px 0px 0px #3c93d5;
+}
+.smiley-container {
+  cursor: pointer;
 }
 
 .blue:hover {
