@@ -24,8 +24,12 @@
           </button>
         </div>
         <div class="info-container">
-          <span class="lives-counter-container">Lives Left</span>
-          <span onclick="onInit()" class="smiley-container"></span>
+          <ul>
+            <li class="lives-counter-container"></li>
+            <li class="stopper-display"></li>
+          </ul>
+
+          <span onclick="onSmileyClicked()" class="smiley-container"></span>
         </div>
       </div>
 
@@ -34,9 +38,8 @@
       </table>
     </div>
 
-    <footer class="footer">Adam Gertzkin</footer>
+    <footer>Built By: Adam Gertzkin</footer>
     <script src="js/utils.js"></script>
     <script src="js/game.js"></script>
-    <script src="js/dev-stage.js"></script>
   </body>
 </html>

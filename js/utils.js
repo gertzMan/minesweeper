@@ -52,3 +52,8 @@ function getEmptyLocation(board) {
   var randIdx = getRandomIntInclusive(0, emptyLocations.length - 1);
   return emptyLocations[randIdx];
 }
+
+function getClassName(i, j) {
+  var cellClass = `cell-${i}-${j}`;
+  return cellClass;
+}

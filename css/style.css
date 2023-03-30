@@ -4,15 +4,21 @@
 html {
   height: 100%;
 }
+body {
+  background-color: white;
+}
+table {
+  margin-left: auto;
+  margin-right: auto;
+}
 .cell {
   width: 100px;
-
-  height: 100px;
-
+  height: 80px;
   background-color: antiquewhite;
-
   text-align: center;
+  font-size: 22px;
   cursor: pointer;
+  color: white;
 }
 body {
   position: relative;
@@ -21,32 +27,47 @@ body {
   min-height: 100%;
   font-family: 'Helvetica Neue', Arial, sans-serif;
 }
+
 h1 {
+  font-family: system-ui, sans-serif;
   font-weight: 400;
+  font-size: 5rem;
+  cursor: pointer;
+  text-align: center;
+  --s: 0.1em; /* the thickness of the line */
+  --c: #2c4bff; /* the color */
+  color: #0000;
+  padding-bottom: var(--s);
+  background: linear-gradient(90deg, var(--c) 50%, #000 0)
+      calc(100% - var(--_p, 0%)) / 200% 100%,
+    linear-gradient(var(--c) 0 0) 0% 100% / var(--_p, 0%) var(--s) no-repeat;
+  -webkit-background-clip: text, padding-box;
+  background-clip: text, padding-box;
+  transition: 0.5s;
+}
+h1:hover {
+  --_p: 100%;
 }
 
 .revealed {
-  background-color: aquamarine;
+  background-color: #2ecc71;
+  box-shadow: 0px 5px 0px 0px #15b358;
 }
 
 .board-container {
   min-height: calc(100vh - 70px);
 }
-.top-pane-container {
-  display: flex;
-}
 
-.footer {
-  position: absolute;
+footer {
+  position: fixed;
   right: 0;
   bottom: 0;
   left: 0;
   padding: 1rem;
-  background-color: #3498db;
-  text-align: center;
-  height: 50px;
+  background-color: #55acee;
   font-size: 30px;
-  text-align: left;
+  text-align: center;
+  text-shadow: 3px 4px 16px rgba(255, 255, 255, 0.6);
 }
 
 .btn {
@@ -61,75 +82,40 @@ h1 {
   cursor: pointer;
 }
 
-.btn:active {
+.btn:active,
+.cell:active,
+.cell:hover {
   transform: translate(0px, 5px);
   -webkit-transform: translate(0px, 5px);
   box-shadow: 0px 1px 0px 0px;
 }
-body {
-  background-color: white;
-}
+
 .blue {
   background-color: #55acee;
   box-shadow: 0px 5px 0px 0px #3c93d5;
 }
 
-.lives-counter-container {
-  font-weight: 500;
-  font-size: xx-large;
-  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto,
-    Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+ul {
+  display: inline-block;
+  list-style: none;
+}
+li {
+  color: royalblue;
+  margin: 10px;
+  font-size: x-large;
+  text-align: left;
 }
 
 .smiley-container {
   cursor: pointer;
   display: block;
   font-size: xx-large;
+  margin-bottom: 20px;
 }
 .game-container {
   text-align: center;
 }
-table {
-  margin-left: auto;
-  margin-right: auto;
-}
-/* header {
-  font-size: 70px;
-  font-weight: 600;
-  color: #fdfdfe;
-  text-align: center;
-  text-shadow: 0px 0px 5px #b393d3, 0px 0px 10px #b393d3, 0px 0px 10px #b393d3,
-    0px 0px 20px #b393d3;
-} */
-h1 {
-  --s: 0.1em; /* the thickness of the line */
-  --c: #2c4bff; /* the color */
 
-  color: #0000;
-  padding-bottom: var(--s);
-  background: linear-gradient(90deg, var(--c) 50%, #000 0)
-      calc(100% - var(--_p, 0%)) / 200% 100%,
-    linear-gradient(var(--c) 0 0) 0% 100% / var(--_p, 0%) var(--s) no-repeat;
-  -webkit-background-clip: text, padding-box;
-  background-clip: text, padding-box;
-  transition: 0.5s;
-}
-h1:hover {
-  --_p: 100%;
-}
-
-/* body {
-  height: 100vh;
-  margin: 0;
-  display: grid;
-  place-content: center;
-} */
-h1 {
-  font-family: system-ui, sans-serif;
-  font-size: 5rem;
-  cursor: pointer;
-  text-align: center;
-}
 .blue:hover {
   background-color: #6fc6ff;
 }
