@@ -13,24 +13,21 @@
       <header><h1>Minesweeper</h1></header>
       <div class="top-pane">
         <div class="level-button-container">
-          <button class="btn green" onClick="onChangeLevel('beginner')">
+          <button class="btn beginner" onClick="onChangeLevel('beginner')">
             BEGINNER
           </button>
-          <button class="btn blue" onClick="onChangeLevel('medium')">
+          <button class="btn medium" onClick="onChangeLevel('medium')">
             MEDIUM
           </button>
-          <button class="btn red" onClick="onChangeLevel('expert')">
+          <button class="btn expert" onClick="onChangeLevel('expert')">
             EXPERT
           </button>
         </div>
         <div class="info-container">
-          <ul>
-            <li class="lives-counter-container"></li>
-            <li class="stopper-display"></li>
-          </ul>
-
-          <span onclick="onSmileyClicked()" class="smiley-container"></span>
+          <div class="lives-counter-container info-items"></div>
+          <div class="stopper-display info-items"></div>
         </div>
+        <div onclick="onSmileyClicked()" class="smiley-container"></div>
       </div>
 
       <table>
@@ -38,7 +35,7 @@
       </table>
     </div>
 
-    <footer>By: Adam Gertzkin</footer>
+    <!-- <footer>By: Adam Gertzkin</footer> -->
     <script src="js/utils.js"></script>
     <script src="js/game.js"></script>
   </body>

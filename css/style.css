@@ -1,62 +1,57 @@
 * {
   box-sizing: border-box;
+
+  /* outline: 1px solid red; */
 }
 html {
-  height: 100%;
+  /* height: 100%; */
 }
-body {
-  background-color: white;
-}
+
 table {
   margin-left: auto;
   margin-right: auto;
 }
 .cell {
-  width: 100px;
-  height: 80px;
-  background-color: antiquewhite;
+  width: 50px;
+  height: 50px;
+  background-color: #caf0f8;
   text-align: center;
   font-size: 22px;
   cursor: pointer;
   color: white;
 }
 body {
-  position: relative;
+  /* position: relative; */
   margin: 0;
   padding-bottom: 6rem;
   min-height: 100%;
   font-family: 'Helvetica Neue', Arial, sans-serif;
+  background-color: #caf0f8;
 }
 
 h1 {
-  font-family: system-ui, sans-serif;
-  font-weight: 400;
-  font-size: 5rem;
-  cursor: pointer;
-  text-align: center;
-  --s: 0.1em; /* the thickness of the line */
-  --c: #2c4bff; /* the color */
-  color: #0000;
-  padding-bottom: var(--s);
-  background: linear-gradient(90deg, var(--c) 50%, #000 0)
-      calc(100% - var(--_p, 0%)) / 200% 100%,
-    linear-gradient(var(--c) 0 0) 0% 100% / var(--_p, 0%) var(--s) no-repeat;
-  -webkit-background-clip: text, padding-box;
-  background-clip: text, padding-box;
-  transition: 0.5s;
+  color: #444444;
+  background: #ffffff;
+  font-size: 100px;
+  text-shadow: 1px 0px 1px #cccccc, 0px 1px 1px #eeeeee, 2px 1px 1px #cccccc,
+    1px 2px 1px #eeeeee, 3px 2px 1px #cccccc, 2px 3px 1px #eeeeee,
+    4px 3px 1px #cccccc, 3px 4px 1px #eeeeee, 5px 4px 1px #cccccc,
+    4px 5px 1px #eeeeee, 6px 5px 1px #cccccc, 5px 6px 1px #eeeeee,
+    7px 6px 1px #cccccc;
+  text-shadow: 3px 6px 4px rgba(202, 240, 248, 1);
 }
 h1:hover {
   --_p: 100%;
 }
 
 .revealed {
-  background-color: #48e68b;
+  background-color: #0077b6;
 
-  box-shadow: 0px 5px 0px 0px #15b358;
+  box-shadow: 0px 5px 0px 0px #032d57;
 }
 
 .board-container {
-  min-height: calc(100vh - 70px);
+  /* min-height: calc(100vh - 70px); */
 }
 
 footer {
@@ -75,9 +70,10 @@ footer {
   border-radius: 5px;
   padding: 15px 25px;
   font-size: 22px;
+  font-weight: bold;
   text-decoration: none;
   margin: 20px;
-  color: #fff;
+  color: #0b0b0b;
   position: relative;
   display: inline-block;
   cursor: pointer;
@@ -91,49 +87,69 @@ footer {
   box-shadow: 0px 1px 0px 0px;
 }
 
-.blue {
-  background-color: #55acee;
-  box-shadow: 0px 5px 0px 0px #3c93d5;
+.info-container {
+  display: flex;
+  justify-content: space-evenly;
 }
-
-ul {
-  display: inline-block;
-  list-style: none;
+.info-items {
+  background-color: #023e8a;
+  color: #fff;
+  font-family: Trebuchet MS;
+  font-size: 18px;
+  font-weight: 800;
+  font-style: normal;
+  text-decoration: none;
+  padding: 14px 15px;
+  border: 0px solid #000;
+  border-radius: 10px;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
 }
-li {
-  color: royalblue;
-  margin: 10px;
-  font-size: x-large;
-  text-align: left;
-}
-
 .smiley-container {
   cursor: pointer;
-  display: block;
+  display: inline-block;
   font-size: xx-large;
   margin-bottom: 20px;
+  border-radius: 30px;
+  /* border: 2px #023e8a solid;
+  width: 50px;
+  height: 50px;
+  background-color: #00b4d8; */
 }
 .game-container {
   text-align: center;
+  background-color: white;
+  max-width: 960px;
+  height: 100vh;
+  padding-left: 20px;
+  padding-right: 20px;
+  margin-left: auto;
+  margin-right: auto;
+  border-radius: 30px;
 }
 
-.blue:hover {
-  background-color: #6fc6ff;
+.medium:hover {
+  background-color: #3a86ff;
 }
-.green {
-  background-color: #2ecc71;
-  box-shadow: 0px 5px 0px 0px #15b358;
+.medium {
+  background-color: #90e0ef;
+  box-shadow: 0px 5px 0px 0px #3a86ff;
 }
-
-.green:hover {
-  background-color: #48e68b;
-}
-
-.red {
-  background-color: #e74c3c;
-  box-shadow: 0px 5px 0px 0px #ce3323;
+.beginner {
+  background-color: #caf0f8;
+  box-shadow: 0px 5px 0px 0px #5b82f8;
 }
 
-.red:hover {
-  background-color: #ff6656;
+.beginner:hover {
+  background-color: #3a86ff;
+}
+
+.expert {
+  background-color: #00b4d8;
+  box-shadow: 0px 5px 0px 0px #5b82f8;
+}
+
+.expert:hover {
+  background-color: #3a86ff;
 }
